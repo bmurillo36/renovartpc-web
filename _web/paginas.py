@@ -47,7 +47,11 @@ HERMANAS = {
     "cursotpc": '<a href="https://curso-tpc.es" rel="noopener">curso-tpc.es</a>',
     "tpc20": '<a href="https://tpc20horas.es" rel="noopener">tpc20horas.es</a>',
     "tpc60": '<a href="https://tpc60horas.es" rel="noopener">tpc60horas.es</a>',
-    "metal": '<a href="https://tpcmetal.es" rel="noopener">tpcmetal.es</a>',
+    # En el METAL si existe el reciclaje de 4 horas, y de ahi viene media
+    # confusion. Se enlaza la web especialista, que es donde esta el detalle
+    # oficio por oficio (Pedro, 16/09/2026).
+    "metal": ('<a href="https://reciclajemetal.es/" rel="noopener">reciclajemetal.es</a>'
+              ' y <a href="https://www.tpcmetal.es/" rel="noopener">tpcmetal.es</a>'),
 }
 
 
@@ -681,8 +685,8 @@ def renovar():
         <p>La tarjeta la emite la <strong>%(emisor)s</strong>. La solicitud se
         entrega en cualquiera de estos sitios:</p>
         <ul>%(donde)s</ul>
-        <p>El portal oficial tiene un teléfono gratuito de información:
-        <strong>%(tel_portal)s</strong>.</p>
+        <p>El portal oficial tiene un teléfono gratuito de información: <a
+        href="tel:+34900112121"><strong>%(tel_portal)s</strong></a></p>
       </div>
       <div class="aparece" data-orden="1">
         <h3>Nosotros no tramitamos la tarjeta</h3>
@@ -1194,8 +1198,8 @@ def contacto():
       </article>
     </div>
     <div class="aviso aparece" data-orden="3">
-      <p><strong>Para el trámite de la tarjeta, el teléfono oficial es el
-      %(tel_portal)s</strong>, gratuito, del portal de la TPC. La solicitud se
+      <p><strong>Para el trámite de la tarjeta, el teléfono oficial es el <a
+      href="tel:+34900112121">%(tel_portal)s</a></strong>, gratuito, del portal de la TPC. La solicitud se
       entrega en los centros de la %(emisor)s, en las asociaciones de la CNC y
       en las sedes de CCOO del Hábitat y UGT FICA. Nosotros somos el centro de
       formación; el resto de las webs del centro están en %(prevencionmadrid)s.</p>

@@ -47,7 +47,7 @@ CENTRO = {
     "provincia": "Madrid",
     "referencia": "Junto a la Plaza de Toros",
     "telefonos": ["91 617 04 23", "630 29 25 16", "691 10 10 10"],
-    "correo": "info@prevencion.cc",
+    "correo": "info@renovartpc.es",   # buzon propio del dominio (Pedro, 16/09/2026)
 }
 
 TEL_E164 = {"91 617 04 23": "+34916170423",
@@ -186,33 +186,26 @@ RECICLAJE_4H = {
 # precio». Inventarse uno es peor que no ponerlo.
 # (nombre, horas, precio, para quien / que es)
 CATALOGO = [
-    ("Nivel inicial · aula permanente", 8, None,          # PENDIENTE PEDRO: precio
-     "La primera formación en prevención para entrar en obra. Es la puerta de "
-     "entrada de quien nunca ha trabajado en construcción."),
-    ("Formación por oficio", 20, 120,
-     "Las 20 horas del oficio concreto: albañilería, ferralla, encofrados, "
-     "fontanería… Hay 31 oficios en el catálogo."),
-    ("Formación polivalente", 6, 70,
-     "Las 6 horas para quien ya hizo las 20 horas de otro oficio, tiene el "
-     "nivel básico del artículo 145 o la convalidación de la parte común de "
-     "14 horas del anexo XIII. No se repite lo que ya está hecho."),
-    ("Nivel básico de prevención", 60, 180,
-     "El nivel básico del artículo 145. Es lo que se pide para ejercer de "
-     "recurso preventivo en obra."),
-    ("Personal directivo", 10, None,                      # PENDIENTE PEDRO: precio
-     "Para gerencia y dirección de empresa."),
-    ("Mandos intermedios", 20, None,                      # PENDIENTE PEDRO: precio
-     "Encargados, capataces y jefes de equipo."),
-    ("Responsables de obra y técnicos de ejecución", 20, None,  # PENDIENTE PEDRO
-     "Para quien dirige la ejecución de la obra."),
-    ("Administrativos", 20, None,                         # PENDIENTE PEDRO: precio
-     "Personal de oficina de empresas del sector."),
-    ("Delegados de prevención", 70, None,                 # PENDIENTE PEDRO: precio
-     "La formación de los delegados de prevención del sector."),
     ("Primeros auxilios en equipos de emergencia", 4, None,   # PENDIENTE PEDRO
      "El <strong>único</strong> curso de 4 horas del catálogo de construcción, "
      "amparado por el VII Convenio. No renueva la tarjeta ni la sustituye: es "
      "formación de emergencias."),
+    ("Formación polivalente", 6, 70,
+     "Las 6 horas para quien ya hizo las 20 horas de otro oficio, tiene el "
+     "nivel básico del artículo 145 o la convalidación de la parte común de "
+     "14 horas del anexo XIII. No se repite lo que ya está hecho."),
+    ("Personal directivo", 10, 90,   # precio dictado por Pedro el 16/09/2026
+     "Para gerencia y dirección de empresa."),
+    ("Formación por oficio", 20, 120,
+     "Las 20 horas del oficio concreto: albañilería, ferralla, encofrados, "
+     "fontanería… Hay 31 oficios en el catálogo."),
+    ("Responsables de obra y técnicos de ejecución", 20, None,  # PENDIENTE PEDRO
+     "Para quien dirige la ejecución de la obra."),
+    ("Administrativos", 20, None,                         # PENDIENTE PEDRO: precio
+     "Personal de oficina de empresas del sector."),
+    ("Nivel básico de prevención", 60, 180,
+     "El nivel básico del artículo 145. Es lo que se pide para ejercer de "
+     "recurso preventivo en obra."),
 ]
 
 # Reglas del centro (verificadas, de las otras webs de Pedro).
