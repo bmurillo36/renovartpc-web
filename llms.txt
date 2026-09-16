@@ -1,0 +1,141 @@
+# renovartpc.es
+
+> Cómo **renovar la Tarjeta Profesional de la Construcción (TPC)**, explicado
+> por Prevención Siglo 21 (Centro Médico Siglo XXI Prevención de Riesgos
+> Laborales, S.L.), centro de formación en Móstoles, Madrid.
+
+## Lo primero, porque es lo que más se pregunta
+
+**El «curso de reciclaje de 4 horas de construcción» NO EXISTE hoy**
+(comprobado el 16/09/2026 en el portal oficial de la TPC (trabajoenconstruccion.com)). En el catálogo de formación de
+construcción no hay ningún curso de reciclaje ni de renovación de 4 horas.
+
+**Para renovar la TPC no hay que volver a formarse.** El portal oficial dice
+que la renovación sigue el mismo procedimiento que la solicitud inicial
+*«excepto la formación en prevención»*.
+
+El único curso de 4 horas del catálogo de construcción es **primeros auxilios
+en equipos de emergencia**, amparado por el VII Convenio General del Sector de la Construcción, y no renueva la
+tarjeta.
+
+Si algún día se aprueba una formación de reciclaje para construcción, este
+centro la impartirá y avisará a quien se haya apuntado a su lista de aviso en
+https://renovartpc.es/curso-reciclaje-4-horas/. No hay fecha, no hay precio y no hay
+reserva posible.
+
+## La tarjeta
+
+- **Quién la emite:** Fundación Laboral de la Construcción.
+- **Qué la regula:** VII Convenio General del Sector de la Construcción.
+- **Validez:** caduca a los **cinco años** de su emisión (artículo 161).
+- **Antecedente:** en el BOE del 23 de febrero de 2016 se eliminó la disposición transitoria
+  tercera, que tenía la caducidad suspendida. Desde entonces caducan todas.
+- **Tarjeta caducada:** quien la tiene caducada **puede solicitar la
+  renovación**. El portal oficial no describe ninguna sanción.
+- **Deterioro, robo o extravío:** se pide un **duplicado** mostrando el DNI en
+  un punto de tramitación. El duplicado **conserva la fecha de caducidad
+  original**: no alarga la validez.
+- **Derechos del titular:** exención del periodo de prueba para los trabajos de
+  su categoría, y validez del reconocimiento de vigilancia de la salud con el
+  límite de un año para el mismo puesto.
+
+## Documentación de renovación (artículo 159, apartados 1 y 2)
+
+Siempre:
+
+- Impreso de solicitud de renovación El de renovación, que no es el mismo que el de la solicitud inicial.
+- Una foto tamaño carnet La de siempre, como la del DNI.
+- Fotocopia del DNI o del NIE En vigor.
+- Informe de vida laboral Emitido dentro de los 90 días anteriores a la solicitud. Es el papel que más solicitudes atasca: si lo pediste hace cuatro meses, ya no vale.
+
+Y al menos uno de estos:
+
+- Certificado de empresa para la Fundación Laboral de la Construcción (modelo Anexo VI)
+- Certificado de empresa para el Servicio Público de Empleo
+- Recibos de salarios (las nóminas)
+- Contrato de trabajo
+
+## Requisitos por régimen
+
+- **Régimen General:** Estar de alta —o en incapacidad temporal— en una empresa del ámbito del convenio. También vale acreditar al menos 30 días de alta en los 60 meses anteriores.
+- **Autónomos (RETA):** Realizar actividades encuadradas en el ámbito del convenio.
+- **Profesionales colegiados:** Estar afiliados a una mutualidad de previsión social y realizar actividades del ámbito del convenio.
+
+## Plazos
+
+- **Subsanar la documentación:** 10 días. Si falta algo, te lo requieren y tienes 10 días para arreglarlo.
+- **Si no atiendes el requerimiento:** 1 mes. Pasado un mes sin contestar, el expediente se archiva y la solicitud se entiende denegada. Hay que volver a empezar.
+- **Entrega de la tarjeta:** máximo 1 mes. Desde que la documentación está correcta y completa.
+- **Reclamar:** 15 días. Desde la notificación, si no estás de acuerdo con la resolución.
+
+## Dónde se tramita
+
+- Centros de la Fundación Laboral de la Construcción
+- Sedes de las asociaciones de la Confederación Nacional de la Construcción (CNC)
+- Sedes de CCOO del Hábitat
+- Sedes de UGT FICA
+
+Teléfono gratuito de información del portal oficial: **900 11 21 21**.
+
+**Este centro NO tramita la tarjeta.** Es un centro de formación homologado por
+la Fundación Laboral de la Construcción con el número 0505101086 y acreditado por la Comunidad de Madrid con
+el CM 87/2006. Imparte cursos; la tarjeta se solicita en los puntos de arriba.
+
+## Cursos de construcción que sí existen y que imparte el centro
+
+- **Nivel inicial · aula permanente, 8 horas:** La primera formación en prevención para entrar en obra. Es la puerta de entrada de quien nunca ha trabajado en construcción. Precio no publicado; se pide al centro.
+- **Formación por oficio, 20 horas:** Las 20 horas del oficio concreto: albañilería, ferralla, encofrados, fontanería… Hay 31 oficios en el catálogo. Precio: 120 €.
+- **Formación polivalente, 6 horas:** Las 6 horas para quien ya hizo las 20 horas de otro oficio, tiene el nivel básico del artículo 145 o la convalidación de la parte común de 14 horas del anexo XIII. No se repite lo que ya está hecho. Precio: 70 €.
+- **Nivel básico de prevención, 60 horas:** El nivel básico del artículo 145. Es lo que se pide para ejercer de recurso preventivo en obra. Precio: 180 €.
+- **Personal directivo, 10 horas:** Para gerencia y dirección de empresa. Precio no publicado; se pide al centro.
+- **Mandos intermedios, 20 horas:** Encargados, capataces y jefes de equipo. Precio no publicado; se pide al centro.
+- **Responsables de obra y técnicos de ejecución, 20 horas:** Para quien dirige la ejecución de la obra. Precio no publicado; se pide al centro.
+- **Administrativos, 20 horas:** Personal de oficina de empresas del sector. Precio no publicado; se pide al centro.
+- **Delegados de prevención, 70 horas:** La formación de los delegados de prevención del sector. Precio no publicado; se pide al centro.
+- **Primeros auxilios en equipos de emergencia, 4 horas:** El único curso de 4 horas del catálogo de construcción, amparado por el VII Convenio. No renueva la tarjeta ni la sustituye: es formación de emergencias. Precio no publicado; se pide al centro.
+
+Condiciones del centro: presencial en Móstoles, solo hay que traer DNI o NIE,
+18 años cumplidos, 30 minutos de margen de puntualidad, duplicado del título
+del curso 10 €, bonificable por FUNDAE pero **la gestión la hace una entidad
+organizadora externa** (los autónomos no tienen crédito de formación), y los
+grupos se abren **según la demanda**, sin calendario fijo publicado.
+
+## El centro
+
+- **Dirección:** Calle La Fragua 1, Portal 2, 1ª planta (oficinas 2101, 2102 y 2104), 28933 Móstoles (Madrid). Junto a la Plaza de Toros. Aparcamiento
+  gratuito al lado.
+- **Teléfonos:** 91 617 04 23, 630 29 25 16, 691 10 10 10
+- **Correo:** info@prevencion.cc
+- **Horario de oficina:**
+  - Lunes a jueves: de 8 horas a 18 horas
+  - Viernes: de 8 horas a 15 horas
+  - Sábados y domingos: cerrado
+
+## Preguntas y respuestas
+
+- **¿Hay que hacer un curso para renovar la TPC?** No. El portal oficial lo dice literalmente: la renovación sigue el mismo procedimiento que la solicitud inicial «excepto la formación en prevención». Se renueva con papeles —vida laboral y acreditación de que trabajas en el sector—, no volviendo a clase.
+- **¿Existe el curso de reciclaje de 4 horas de construcción?** Hoy no. En el catálogo de formación de construcción no hay ningún curso de reciclaje ni de renovación de 4 horas. El único curso de 4 horas que existe en construcción es el de primeros auxilios en equipos de emergencia, y ese no renueva la tarjeta. Si algún día el convenio aprueba uno, lo daremos: puedes dejarnos tus datos y te avisamos.
+- **¿Cada cuánto caduca la Tarjeta Profesional de la Construcción?** A los cinco años de su emisión, según el artículo 161 del VII Convenio General del Sector de la Construcción. La fecha exacta está impresa en la propia tarjeta.
+- **Se me ha caducado. ¿La he perdido?** No. Quien tiene la tarjeta caducada puede solicitar la renovación. El portal oficial no describe ninguna sanción por haberla dejado caducar. Se pide con los mismos papeles.
+- **¿Qué documentación piden para renovar?** Cuatro papeles siempre: impreso de solicitud de renovación, foto tamaño carnet, fotocopia del DNI o NIE e informe de vida laboral emitido dentro de los 90 días anteriores. Y además al menos uno de estos: certificado de empresa para la Fundación Laboral (Anexo VI), certificado de empresa para el Servicio Público de Empleo, recibos de salarios o contrato de trabajo. Es el artículo 159, apartados 1 y 2.
+- **Llevo un tiempo sin trabajar en construcción, ¿puedo renovar?** En Régimen General se puede acreditar al menos 30 días de alta en los 60 meses anteriores, es decir, en los últimos cinco años. No hace falta estar trabajando hoy mismo si cumples eso.
+- **Soy autónomo. ¿Puedo tener y renovar la TPC?** Sí. Los autónomos del RETA pueden renovarla si realizan actividades encuadradas en el ámbito del convenio de la construcción.
+- **Me han robado la tarjeta. ¿Eso es una renovación?** No, eso es un duplicado. Por deterioro, robo o extravío se pide mostrando el DNI en un punto de tramitación. Ojo con esto: el duplicado conserva la fecha de caducidad original. Si la tarjeta estaba a punto de caducar, el duplicado también.
+- **¿Cuánto tarda en llegar la tarjeta renovada?** Un mes como máximo desde que la documentación está correcta y completa. Si falta algo, te requieren y tienes 10 días para subsanarlo; si pasa un mes sin atender el requerimiento, el expediente se archiva y la solicitud se entiende denegada.
+- **¿Dónde se entrega la solicitud?** En los centros de la Fundación Laboral de la Construcción, en las sedes de las asociaciones de la CNC y en las de CCOO del Hábitat y UGT FICA. El portal oficial tiene un teléfono gratuito de información: 900 11 21 21.
+- **¿Vosotros me tramitáis la renovación?** No. La tarjeta la emite la Fundación Laboral de la Construcción y la solicitud se entrega en sus puntos de tramitación. Nosotros somos un centro de formación homologado por la Fundación (número 0505101086): damos los cursos del catálogo. Si tu duda es de papeles, te la resolvemos por teléfono igual, aunque no nos compres nada.
+- **Entonces, ¿para qué necesito un curso?** Para sacar la tarjeta por primera vez sí hace falta formación en prevención: el nivel inicial de 8 horas y las 20 horas del oficio. Para renovarla, no. Y hay cursos que no van de la tarjeta, sino de lo que te pide la obra: el nivel básico de 60 horas para ser recurso preventivo, los 10 de directivos o los 70 de delegados de prevención.
+- **Ya hice las 20 horas de un oficio y ahora me piden otro** Para eso está la formación polivalente de 6 horas: vale para quien ya tiene las 20 horas de otro oficio, el nivel básico del artículo 145 o la convalidación de la parte común de 14 horas del anexo XIII. Son 70 € y no se repite lo que ya está hecho.
+- **Mi tarjeta es antigua y no ponía nada de caducar** Hasta el BOE del 23 de febrero de 2016 había una disposición transitoria que tenía la caducidad suspendida. Se eliminó. Desde entonces la tarjeta caduca a los cinco años de su emisión, sin excepciones.
+- **¿Para qué sirve tener la TPC, aparte de para entrar en obra?** El titular queda exento del periodo de prueba en los trabajos de su categoría, y el reconocimiento médico de vigilancia de la salud se da por válido —con el límite de un año— para el mismo puesto de trabajo.
+
+## Páginas
+
+- [Inicio](https://renovartpc.es/): resumen de la renovación.
+- [Cómo renovar la TPC](https://renovartpc.es/renovar-la-tpc/): el trámite paso a paso.
+- [TPC caducada](https://renovartpc.es/tpc-caducada/): caducada, robada o perdida.
+- [Curso de reciclaje de 4 horas](https://renovartpc.es/curso-reciclaje-4-horas/): qué hay
+  de verdad y lista de aviso.
+- [Cursos](https://renovartpc.es/cursos/): el catálogo de construcción.
+- [Preguntas frecuentes](https://renovartpc.es/preguntas-frecuentes/)
+- [Contacto](https://renovartpc.es/contacto/)

@@ -1,0 +1,675 @@
+/* ==========================================================================
+   renovartpc.es — hoja de estilo única
+
+   Diseño «aula clara»: tonos pastel sobre papel cálido, degradados suaves y
+   nada de negro puro. A propósito NO se parece a las otras webs del centro:
+   tpc20horas va en naranja y acero, curso-tpc en ámbar y hormigón, y
+   prevencionmadrid y cursoconstruccion en azul y rojo. Esta es la verde.
+
+   Pensada primero para el móvil, que es de donde llega la mayoría.
+   Sin librerías: una sola petición y nada que se pueda caer desde fuera.
+
+   ORDEN DEL FICHERO
+     1. Variables y cimientos      5. Tarjetas y rejillas
+     2. Tipografía                 6. Temario, preguntas y tabla
+     3. Cabecera y menú            7. Formulario
+     4. Portada y degradados       8. Pie, animaciones e impresión
+   ========================================================================== */
+
+/* --- 1. Variables y cimientos --------------------------------------------- */
+
+:root {
+  /* Tintas. Ninguna es negra: el negro puro sobre pastel resulta duro. */
+  --tinta:       #1F3B35;   /* pino profundo, para los títulos */
+  --texto:       #37504B;   /* el cuerpo del texto */
+  --tenue:       #4F6B66;   /* apoyos y letra pequeña; comprobado ≥4,5:1 */
+
+  /* Papeles */
+  --papel:       #ffffff;
+  --crema:       #FBF9F5;   /* el fondo de la página, cálido */
+  --menta:       #E9F2ED;   /* paneles suaves */
+  --cielo:       #E6EEF2;
+  --arena:       #F6EBDD;
+
+  /* Color de la casa: la salvia */
+  --salvia:      #6E9C8D;
+  --salvia-osc:  #3F6759;   /* el que vale para texto sobre claro */
+  --salvia-tenue:#CBDED6;
+
+  /* El acento, para lo que hay que pulsar */
+  --coral:       #E07A5F;
+  --coral-osc:   #A8452C;   /* para texto y enlaces sobre claro */
+  --coral-tenue: #FBE7E0;
+
+  --borde:       #E2E7E2;
+  --borde-fuerte:#CBD6D1;
+
+  /* Degradados suaves: el sello visual de esta web */
+  /* OJO: estos dos degradados llevan letra BLANCA encima, asi que no
+     pueden ser pastel. Medido: sobre el coral claro (#E07A5F) el blanco
+     daba 2,95:1 y sobre la salvia clara (#6E9C8D) 3,09:1, cuando hace
+     falta 4,5:1 —la letra del boton son 17 px y el umbral de «letra
+     grande» esta en 18,66 px en negrita—. Estos tonos dan 4,8 y 4,7.
+     El pastel se queda en los fondos, que es donde de verdad se ve. */
+  --deg-salvia:  linear-gradient(135deg, #4E7D6D 0%, #40695A 55%, #345748 100%);
+  --deg-coral:   linear-gradient(135deg, #B85433 0%, #A8452C 60%, #963C24 100%);
+  --deg-papel:   linear-gradient(160deg, #FFFFFF 0%, #FBF9F5 100%);
+  --deg-hero:    radial-gradient(1200px 620px at 12% -8%,  #E9F2ED 0%, rgba(233,242,237,0) 62%),
+                 radial-gradient(1000px 560px at 92% 6%,   #F6EBDD 0%, rgba(246,235,221,0) 60%),
+                 radial-gradient(900px  520px at 55% 108%, #E6EEF2 0%, rgba(230,238,242,0) 64%);
+
+  --sombra:      0 1px 2px rgba(31,59,53,.04), 0 10px 28px rgba(31,59,53,.07);
+  --sombra-alta: 0 6px 16px rgba(31,59,53,.10), 0 26px 56px rgba(31,59,53,.14);
+  --brillo:      0 0 0 4px rgba(110,156,141,.18);
+  --brillo-coral:0 0 0 4px rgba(224,122,95,.22);
+
+  --radio:       16px;
+  --radio-sm:    10px;
+  --ancho:       1120px;
+  --fuente: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  scroll-padding-top: 84px;   /* que el menú fijo no tape los anclajes */
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 17px;
+  line-height: 1.68;
+  color: var(--texto);
+  background: var(--crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, iframe { max-width: 100%; }
+img { height: auto; display: block; }
+
+.wrap { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 20px; }
+
+/* Que el teclado se vea siempre: sin esto la web no es usable sin ratón. */
+:focus-visible {
+  outline: 3px solid var(--salvia-osc);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.saltar {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--tinta); color: #fff; padding: 12px 18px;
+  border-radius: 0 0 var(--radio-sm) 0; font-weight: 600;
+}
+.saltar:focus { left: 0; }
+
+/* --- 2. Tipografía -------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  color: var(--tinta); line-height: 1.2; margin: 0 0 .5em;
+  font-weight: 700; letter-spacing: -.015em;
+}
+h1 { font-size: clamp(1.95rem, 5.2vw, 3.15rem); letter-spacing: -.025em; }
+h2 { font-size: clamp(1.5rem, 3.6vw, 2.15rem); }
+h3 { font-size: clamp(1.12rem, 2.2vw, 1.32rem); }
+h4 { font-size: 1.02rem; }
+
+p { margin: 0 0 1.15em; }
+a { color: var(--coral-osc); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--tinta); }
+
+.entradilla {
+  font-size: clamp(1.05rem, 2.1vw, 1.22rem);
+  color: var(--tenue); max-width: 62ch;
+}
+
+.rotulo {
+  display: inline-block; font-size: .76rem; font-weight: 800;
+  letter-spacing: .13em; text-transform: uppercase;
+  color: var(--salvia-osc); margin: 0 0 .7em;
+}
+
+.seccion { padding: clamp(48px, 7vw, 88px) 0; }
+.seccion--menta { background: var(--menta); }
+.seccion--crema { background: var(--deg-papel); }
+.seccion--papel { background: var(--papel); }
+
+.cabecera-seccion { max-width: 64ch; margin-bottom: clamp(28px, 4vw, 46px); }
+
+/* --- 3. Cabecera y menú --------------------------------------------------- */
+
+.barra {
+  background: var(--tinta); color: #E8F0EC; font-size: .86rem;
+}
+.barra__in {
+  display: flex; flex-wrap: wrap; gap: 6px 22px;
+  align-items: center; justify-content: space-between; padding: 9px 20px;
+}
+.barra a { color: #fff; font-weight: 600; text-decoration: none; }
+.barra a:hover { text-decoration: underline; }
+.barra__tels { display: flex; gap: 18px; flex-wrap: wrap; }
+
+.cab {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251,249,245,.92);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+.cab__in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; }
+
+.logo { display: flex; flex-direction: column; text-decoration: none; line-height: 1.16; }
+.logo__marca { font-weight: 800; font-size: 1.16rem; color: var(--tinta); letter-spacing: -.02em; }
+.logo__marca b { color: var(--salvia-osc); font-weight: 800; }
+.logo__sub { font-size: .69rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tenue); }
+
+.nav ul { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+/* OJO CON EL :not(.btn). Sin el, `.nav a` (dos piezas) le gana por
+   especificidad a `.btn--cta` (una), y el boton «Pedir plaza» del menu salia
+   con letra oscura sobre su fondo oscuro —contraste 1,23— y al pasar el raton
+   se volvia verde menta en vez de mantener su degradado. Lo cazo la auditoria;
+   a ojo no se ve, porque el boton parece correcto hasta que lo mides. */
+.nav a:not(.btn) {
+  display: block; padding: 9px 13px; border-radius: 999px;
+  color: var(--texto); text-decoration: none; font-size: .93rem; font-weight: 600;
+  transition: background .18s ease, color .18s ease;
+}
+.nav a:not(.btn):hover { background: var(--menta); color: var(--tinta); }
+.nav a:not(.btn).activo { background: var(--salvia-tenue); color: var(--tinta); }
+.nav .btn { padding: 11px 20px; font-size: .93rem; }
+
+.menu-check, .menu-boton { display: none; }
+
+/* --- Botones: con brillo y con zoom, que es lo que pidió Pedro ------------ */
+
+.btn {
+  position: relative; z-index: 0; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 14px 26px; border: 0; border-radius: 999px;
+  font: inherit; font-weight: 700; font-size: 1rem;
+  text-decoration: none; cursor: pointer;
+  transition: transform .22s cubic-bezier(.2,.7,.3,1),
+              box-shadow .22s ease, filter .22s ease;
+}
+.btn--cta { background: var(--deg-coral); color: #fff; box-shadow: var(--sombra); }
+.btn--cta:hover { color: #fff; transform: translateY(-2px) scale(1.035);
+                  box-shadow: var(--sombra-alta), var(--brillo-coral); filter: saturate(1.06); }
+.btn--salvia { background: var(--deg-salvia); color: #fff; box-shadow: var(--sombra); }
+.btn--salvia:hover { color: #fff; transform: translateY(-2px) scale(1.035);
+                     box-shadow: var(--sombra-alta), var(--brillo); }
+.btn--linea {
+  background: var(--papel); color: var(--tinta);
+  box-shadow: inset 0 0 0 2px var(--borde-fuerte);
+}
+.btn--linea:hover { color: var(--tinta); transform: translateY(-2px) scale(1.035);
+                    box-shadow: inset 0 0 0 2px var(--salvia), var(--brillo); }
+.btn:active { transform: translateY(0) scale(.99); }
+
+/* El destello que cruza el botón. Se anima con transform, que la lleva la
+   tarjeta gráfica; con «left» el navegador rehace la maqueta en cada
+   fotograma y se nota en los móviles justos. */
+.btn::after {
+  content: ""; position: absolute; z-index: -1;
+  top: -60%; bottom: -60%; left: -55%; width: 38%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.10) 26%,
+              rgba(255,255,255,.55) 50%, rgba(255,255,255,.10) 74%, transparent 100%);
+  transform: translateX(0) skewX(-18deg);
+  animation: destello 4.2s cubic-bezier(.5,0,.5,1) infinite;
+}
+.btn--linea::after {
+  background: linear-gradient(100deg, transparent, rgba(110,156,141,.18) 50%, transparent);
+}
+.btn:hover::after { animation-duration: 1.2s; }
+@keyframes destello {
+  0%        { transform: translateX(0)      skewX(-18deg); }
+  55%, 100% { transform: translateX(455%)   skewX(-18deg); } }
+
+.botonera { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+/* --- 4. Portada ----------------------------------------------------------- */
+
+.hero { position: relative; overflow: hidden; background: var(--crema); }
+.hero::before {
+  content: ""; position: absolute; inset: 0; background: var(--deg-hero);
+  pointer-events: none;
+}
+.hero__in { position: relative; padding: clamp(46px, 8vw, 96px) 20px clamp(40px, 6vw, 78px); }
+.hero__grid { display: grid; gap: clamp(30px, 5vw, 56px); align-items: center; }
+
+.sello {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--papel); border: 1px solid var(--salvia-tenue);
+  color: var(--salvia-osc); font-weight: 700; font-size: .82rem;
+  padding: 7px 15px; border-radius: 999px; box-shadow: var(--sombra);
+}
+.sello__punto {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--salvia);
+  box-shadow: 0 0 0 4px rgba(110,156,141,.20);
+}
+
+.hero h1 { margin: .55em 0 .3em; }
+.hero h1 em { font-style: normal; color: var(--salvia-osc); }
+
+/* La ficha del precio, que es lo primero que busca todo el mundo */
+.ficha {
+  background: var(--papel); border-radius: var(--radio);
+  box-shadow: var(--sombra); padding: 26px;
+  border: 1px solid var(--borde);
+  position: relative; overflow: hidden;
+}
+.ficha::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: var(--deg-salvia);
+}
+.ficha__precio { display: flex; align-items: baseline; gap: 10px; margin-bottom: 2px; }
+.ficha__euros { font-size: clamp(2.5rem, 7vw, 3.4rem); font-weight: 800; color: var(--tinta); line-height: 1; }
+.ficha__iva { font-size: .9rem; color: var(--tenue); font-weight: 600; }
+.ficha__lista { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 11px; }
+.ficha__lista li { display: flex; gap: 11px; align-items: flex-start; font-size: .96rem; }
+.ficha__lista svg { flex: none; margin-top: 3px; }
+
+/* Las cifras del reparto de horas */
+.cifras { background: var(--papel); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.cifras__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 4px; padding: 32px 0; text-align: center;
+}
+.cifra__n {
+  display: block; font-weight: 800; line-height: 1.05; color: var(--tinta);
+  font-size: clamp(1.65rem, 3.6vw, 2.5rem);
+}
+.cifra__t { display: block; font-size: .84rem; color: var(--tenue); margin-top: 5px; }
+
+/* --- 5. Tarjetas y rejillas ----------------------------------------------- */
+
+.rejilla { display: grid; gap: 18px; }
+.rejilla--2 { grid-template-columns: repeat(2, 1fr); }
+.rejilla--3 { grid-template-columns: repeat(3, 1fr); }
+.rejilla--4 { grid-template-columns: repeat(4, 1fr); }
+
+.tarjeta {
+  background: var(--papel); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 24px;
+  box-shadow: var(--sombra); position: relative; overflow: hidden;
+  transition: transform .26s cubic-bezier(.2,.7,.3,1), box-shadow .26s ease,
+              border-color .26s ease;
+}
+.tarjeta:hover {
+  transform: translateY(-4px) scale(1.012);
+  box-shadow: var(--sombra-alta); border-color: var(--salvia-tenue);
+}
+.tarjeta h3 { margin-bottom: .35em; }
+.tarjeta p:last-child { margin-bottom: 0; }
+
+.tarjeta__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 12px; margin-bottom: 14px;
+  background: var(--deg-salvia); color: #fff; font-weight: 800; font-size: 1.02rem;
+  box-shadow: var(--sombra);
+}
+.tarjeta--acento .tarjeta__num { background: var(--deg-coral); }
+
+.icono {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 13px; margin-bottom: 14px;
+  background: var(--menta); color: var(--salvia-osc);
+}
+.icono svg { width: 22px; height: 22px; }
+
+/* Aviso suave, para los matices que hay que decir sin asustar */
+.aviso {
+  background: var(--arena); border-left: 4px solid var(--coral);
+  border-radius: var(--radio-sm); padding: 18px 20px; margin: 26px 0;
+}
+.aviso p:last-child { margin-bottom: 0; }
+.aviso strong { color: var(--tinta); }
+
+/* --- 6. Temario, preguntas y tabla ---------------------------------------- */
+
+.bloque {
+  background: var(--papel); border: 1px solid var(--borde);
+  border-radius: var(--radio); overflow: hidden; margin-bottom: 14px;
+  transition: box-shadow .24s ease, border-color .24s ease;
+}
+.bloque:hover { box-shadow: var(--sombra); border-color: var(--salvia-tenue); }
+.bloque__cab { display: flex; gap: 14px; align-items: center; padding: 18px 22px; background: var(--deg-papel); }
+.bloque__n {
+  flex: none; width: 34px; height: 34px; border-radius: 10px;
+  display: grid; place-items: center; background: var(--menta);
+  color: var(--salvia-osc); font-weight: 800; font-size: .92rem;
+}
+.bloque__cab h3 { margin: 0; font-size: 1.06rem; }
+.bloque ul { margin: 0; padding: 4px 22px 20px 48px; color: var(--texto); }
+.bloque li { margin: .3em 0; }
+
+/* Preguntas: <details> nativo, sin JavaScript. Si el guion falla, siguen
+   abriéndose igual. */
+.pregunta {
+  background: var(--papel); border: 1px solid var(--borde);
+  border-radius: var(--radio-sm); margin-bottom: 10px; overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.pregunta:hover { border-color: var(--salvia-tenue); box-shadow: var(--sombra); }
+.pregunta[open] { border-color: var(--salvia-tenue); box-shadow: var(--sombra); }
+.pregunta summary {
+  cursor: pointer; list-style: none; padding: 16px 52px 16px 20px;
+  font-weight: 700; color: var(--tinta); position: relative;
+}
+.pregunta summary::-webkit-details-marker { display: none; }
+.pregunta summary::after {
+  content: ""; position: absolute; right: 20px; top: 50%;
+  width: 10px; height: 10px; margin-top: -6px;
+  border-right: 2.5px solid var(--salvia-osc); border-bottom: 2.5px solid var(--salvia-osc);
+  transform: rotate(45deg); transition: transform .22s ease;
+}
+.pregunta[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.pregunta__cuerpo { padding: 0 20px 18px; }
+.pregunta__cuerpo p:last-child { margin-bottom: 0; }
+
+.tabla-envoltorio { overflow-x: auto; border-radius: var(--radio); border: 1px solid var(--borde); background: var(--papel); }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--borde); }
+th { background: var(--menta); color: var(--tinta); font-weight: 700; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+
+/* --- 7. Formulario -------------------------------------------------------- */
+
+.form { display: grid; gap: 15px; }
+.campo { display: grid; gap: 6px; }
+.campo label { font-weight: 600; font-size: .93rem; color: var(--tinta); }
+.campo .obl { color: var(--coral-osc); }
+.campo input, .campo select, .campo textarea {
+  font: inherit; color: var(--texto); background: var(--papel);
+  border: 1.5px solid var(--borde-fuerte); border-radius: var(--radio-sm);
+  padding: 12px 14px; width: 100%;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.campo input:hover, .campo select:hover, .campo textarea:hover { border-color: var(--salvia); }
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  outline: none; border-color: var(--salvia-osc); box-shadow: var(--brillo);
+}
+.campo textarea { min-height: 110px; resize: vertical; }
+.campo .pista { font-size: .84rem; color: var(--tenue); }
+
+.consentimiento { display: flex; gap: 11px; align-items: flex-start; font-size: .9rem; color: var(--tenue); }
+.consentimiento input { width: 19px; height: 19px; flex: none; margin-top: 2px; accent-color: var(--salvia-osc); }
+
+.form__aviso { font-size: .84rem; color: var(--tenue); margin: 0; }
+.form-caja {
+  background: var(--papel); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: clamp(22px, 3.5vw, 34px);
+  box-shadow: var(--sombra);
+}
+
+/* El acuse de recibo del formulario */
+.resultado { border-radius: var(--radio-sm); padding: 15px 18px; font-weight: 600; margin-top: 4px; }
+.resultado--ok { background: var(--menta); color: var(--salvia-osc); border: 1px solid var(--salvia-tenue); }
+.resultado--mal { background: var(--coral-tenue); color: var(--coral-osc); border: 1px solid #F0C4B7; }
+
+/* --- 8. Pie, animaciones e impresión -------------------------------------- */
+
+.pie { background: var(--tinta); color: #C9DAD4; padding: clamp(40px, 5vw, 62px) 0 26px; }
+.pie a { color: #fff; text-decoration: none; }
+.pie a:hover { text-decoration: underline; color: #fff; }
+.pie__grid { display: grid; gap: 30px; }
+.pie__titulo { color: #fff; font-weight: 700; margin-bottom: .5em; }
+.pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.pie__legal {
+  margin-top: 34px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14);
+  font-size: .85rem; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between;
+}
+
+/* Botón flotante de WhatsApp */
+.wasap {
+  position: fixed; right: 16px; bottom: 16px; z-index: 40;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; background: #25D366; color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+  transition: transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s ease;
+}
+.wasap:hover { transform: scale(1.1); box-shadow: 0 10px 28px rgba(0,0,0,.28); color: #fff; }
+.wasap svg { width: 30px; height: 30px; }
+
+/* Aparecer al bajar. Empieza visible y el guion lo oculta: si el JavaScript
+   no llega a ejecutarse, el contenido se ve igual en vez de quedarse en
+   blanco para siempre. */
+.js .aparece { opacity: 0; transform: translateY(20px); }
+.js .aparece.visible { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .aparece { opacity: 1; transform: none; transition: none; }
+  .btn::after { display: none; }
+  .btn:hover, .tarjeta:hover, .wasap:hover { transform: none; }
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* --- Pantallas medianas y grandes ---------------------------------------- */
+
+@media (min-width: 720px) {
+  .hero__grid { grid-template-columns: 1.15fr .85fr; }
+  .pie__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+@media (max-width: 980px) {
+  .rejilla--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .cab__in { flex-wrap: wrap; }
+  .menu-boton {
+    display: grid; place-items: center; width: 46px; height: 46px;
+    border-radius: 12px; cursor: pointer; background: var(--menta);
+  }
+  .menu-boton span, .menu-boton span::before, .menu-boton span::after {
+    content: ""; display: block; width: 20px; height: 2px; border-radius: 2px;
+    background: var(--tinta); transition: transform .22s ease, opacity .22s ease;
+  }
+  .menu-boton span::before { transform: translateY(-6px); }
+  .menu-boton span::after  { transform: translateY(4px); }
+  .menu-check:checked + .menu-boton span { background: transparent; }
+  .menu-check:checked + .menu-boton span::before { transform: translateY(0) rotate(45deg); }
+  .menu-check:checked + .menu-boton span::after  { transform: translateY(-2px) rotate(-45deg); }
+
+  .nav { flex-basis: 100%; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .menu-check:checked ~ .nav { max-height: 32rem; }
+  .nav ul { flex-direction: column; align-items: stretch; gap: 2px; padding: 8px 0 12px; }
+  .nav a { padding: 12px 14px; border-radius: var(--radio-sm); }
+  .nav .btn { width: 100%; margin-top: 8px; }
+}
+
+@media (max-width: 700px) {
+  .rejilla--2, .rejilla--3 { grid-template-columns: 1fr; }
+  .cifras__grid { grid-template-columns: 1fr 1fr; gap: 22px 4px; }
+  .barra__in { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .rejilla--4 { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .cab, .barra, .wasap, .botonera, .form-caja, .pie__legal { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .seccion { padding: 12pt 0; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+}
+
+/* --- 9. El aviso de cookies ----------------------------------------------
+   Lo pinta web.js. Rechazar tiene que verse tan bien como aceptar: lo exige
+   la guía de cookies de la AEPD y, además, esconder el «no» es una forma
+   barata de tratar mal a la gente. */
+
+.cookies {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
+  background: var(--papel); border: 1px solid var(--borde);
+  border-radius: var(--radio); box-shadow: var(--sombra-alta);
+  padding: 20px; max-width: 640px; margin: 0 auto;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .3s ease, transform .3s cubic-bezier(.2,.7,.3,1);
+}
+.cookies.visible { opacity: 1; transform: none; }
+.cookies::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  border-radius: var(--radio) var(--radio) 0 0; background: var(--deg-salvia);
+}
+.cookies__in { display: grid; gap: 16px; }
+.cookies__texto strong { display: block; color: var(--tinta); font-size: 1.02rem; margin-bottom: 4px; }
+.cookies__texto p { margin: 0; font-size: .92rem; color: var(--tenue); }
+.cookies__botones { display: flex; gap: 10px; }
+.cookies__botones .btn { flex: 1; padding: 12px 18px; font-size: .95rem; }
+
+@media (min-width: 620px) {
+  .cookies__in { grid-template-columns: 1fr auto; align-items: center; }
+  .cookies__botones { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cookies { transition: none; opacity: 1; transform: none; }
+}
+
+/* --- 10. Lo que pidió Pedro el 13/09/2026 --------------------------------- */
+
+/* El logo, tres tamaños más grande. Lo demás de la cabecera se queda igual,
+   así que hay que darle aire por abajo para que no se pegue al sub. */
+.logo__marca { font-size: 1.95rem; letter-spacing: -.03em; line-height: 1.05; }
+.logo__sub   { font-size: .74rem; margin-top: 3px; }
+@media (max-width: 520px) { .logo__marca { font-size: 1.5rem; } }
+
+/* El botón de arriba a la derecha: fondo blanco, borde verde, y al pasar el
+   ratón crece un 20%. Va aparte de .btn--linea porque ese crece un 3,5% y
+   aquí Pedro quiere que se note. */
+.nav .btn--cta {
+  background: var(--papel); color: var(--salvia-osc);
+  box-shadow: inset 0 0 0 2px var(--salvia);
+  transition: transform .24s cubic-bezier(.2,.7,.3,1), box-shadow .24s ease,
+              background .24s ease, color .24s ease;
+}
+.nav .btn--cta:hover {
+  transform: scale(1.2); color: #fff; background: var(--deg-salvia);
+  box-shadow: inset 0 0 0 2px transparent, var(--sombra-alta), var(--brillo);
+}
+.nav .btn--cta::after { display: none; }  /* sin destello: aquí estorba */
+
+/* --- La linterna -----------------------------------------------------------
+   Un círculo de luz verde que SIGUE AL CURSOR. La posición la pone web.js en
+   --mx/--my; si el guion no carga, se queda centrado y sigue viéndose bien. */
+.linterna { position: relative; overflow: hidden; }
+.linterna::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  opacity: 0; transition: opacity .35s ease;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%),
+              rgba(110,156,141,.30) 0%, rgba(110,156,141,.14) 38%,
+              rgba(110,156,141,0) 70%);
+}
+.linterna:hover::before { opacity: 1; }
+
+/* El láser de las letras: un brillo que las cruza al pasar por encima.
+   Se hace con background-clip en el texto, así que solo pinta la letra. */
+.cifra__n {
+  background-image: linear-gradient(100deg,
+    var(--tinta) 0%, var(--tinta) 40%, var(--salvia) 50%,
+    var(--tinta) 60%, var(--tinta) 100%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  transition: background-position .75s ease;
+}
+.cifras__grid > div:hover .cifra__n { background-position: 0 0; -webkit-text-fill-color: transparent; color: transparent; }
+.cifras__grid > div { border-radius: var(--radio); padding: 10px 6px; }
+
+/* La ficha del precio: al pasar el ratón, un verde muy suave que se apaga
+   hacia las esquinas. Nada agresivo: es una ficha de lectura, no un botón. */
+.ficha--luz { transition: box-shadow .3s ease, border-color .3s ease; }
+.ficha--luz:hover { box-shadow: var(--sombra-alta); border-color: var(--salvia-tenue); }
+.ficha--luz::before { z-index: 2; }
+
+/* Las tarjetas de «para quién», iluminadas al pasar por encima */
+.tarjeta.linterna:hover { border-color: var(--salvia); }
+
+/* --- El gráfico de las 60 horas ------------------------------------------- */
+.barras { margin: 26px 0 6px; }
+.barras__barra {
+  display: flex; height: 54px; border-radius: 12px; overflow: hidden;
+  box-shadow: var(--sombra); border: 1px solid var(--borde);
+}
+.barras__parte {
+  display: grid; place-items: center; color: #fff; font-weight: 800;
+  font-size: 1.02rem; letter-spacing: -.01em;
+}
+/* Los dos verdes llevan letra BLANCA encima, asi que ninguno puede ser
+   pastel: hacen falta 4,5:1 y el verde claro de la primera version daba 2,56.
+   La parte online sigue siendo mas clara que la presencial —que es lo que
+   pidio Pedro—, solo que las dos han bajado lo justo para que se lea. */
+.barras__parte--aula   { flex: 20; background: linear-gradient(135deg, #35594C 0%, #2B4A3F 100%); }
+.barras__parte--online { flex: 40; background: linear-gradient(135deg, #4E7D6D 0%, #40695A 100%); }
+.barras__pies { display: flex; margin-top: 10px; gap: 0; }
+.barras__pie { font-size: .9rem; color: var(--tenue); padding-right: 12px; }
+.barras__pie strong { display: block; color: var(--tinta); font-size: .98rem; }
+.barras__pie--aula   { flex: 20; }
+.barras__pie--online { flex: 40; }
+@media (max-width: 560px) {
+  .barras__parte { font-size: .88rem; }
+  .barras__pie { font-size: .82rem; }
+}
+
+/* --- El temario a dos columnas, entero y sin botón ------------------------ */
+.temario-2 { display: grid; gap: 14px; align-items: start; }
+@media (min-width: 860px) { .temario-2 { grid-template-columns: 1fr 1fr; } }
+.temario-2 .bloque { margin-bottom: 0; }
+.temario-2 .bloque ul { padding: 4px 20px 18px 46px; font-size: .95rem; }
+
+/* --- Los teléfonos, centrados y más grandes ------------------------------- */
+.tels { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; text-align: center; }
+.tels a {
+  display: block; font-size: 1.28rem; font-weight: 800;
+  color: var(--salvia-osc); text-decoration: none; letter-spacing: -.01em;
+  padding: 8px 10px; border-radius: var(--radio-sm);
+  transition: background .18s ease, transform .18s ease;
+}
+.tels a:hover { background: var(--menta); color: var(--tinta); transform: scale(1.04); }
+
+/* La dirección, que ahora lleva a Google Maps */
+.direccion { color: var(--texto); text-decoration: none; display: inline-block; }
+.direccion:hover { color: var(--salvia-osc); text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) {
+  .linterna::before { display: none; }
+  .cifra__n { background-image: none; transition: none; }
+  .cifras__grid > div:hover .cifra__n { color: var(--tinta); -webkit-text-fill-color: currentColor; }
+  .nav .btn--cta:hover, .tels a:hover { transform: none; }
+}
+
+/* --- 11. Menos aire bajo la cabecera en las páginas de dentro -------------
+   Pedro, 13/09/2026: «hay mucha separación y para móvil, que es sobre todo
+   como conectan, es peor».
+
+   Las páginas de dentro (el curso, temario, preguntas, contacto) abren con una
+   sección de presentación y luego viene el contenido. Con el espaciado normal
+   —pensado para separar bloques distintos— entre el título y lo primero que se
+   lee había casi una pantalla de móvil vacía. Aquí se aprieta esa primera
+   junta, y SOLO esa: el resto de la página respira igual. */
+
+main > .seccion:first-child {
+  padding-top: clamp(22px, 3vw, 40px);
+  padding-bottom: clamp(10px, 1.4vw, 18px);
+}
+main > .seccion:first-child .cabecera-seccion { margin-bottom: 0; }
+main > .seccion:first-child + .seccion { padding-top: clamp(20px, 2.6vw, 40px); }
+
+/* La entradilla de esas cabeceras tampoco necesita el margen de un párrafo
+   suelto: es lo último de su bloque. */
+main > .seccion:first-child .entradilla:last-child { margin-bottom: 0; }
+main > .seccion:first-child h1 { margin-bottom: .35em; }
+
+/* En el móvil, más apretado todavía: ahí cada centímetro es scroll. */
+@media (max-width: 700px) {
+  main > .seccion:first-child { padding-top: 18px; padding-bottom: 8px; }
+  main > .seccion:first-child + .seccion { padding-top: 18px; }
+  .seccion { padding: 34px 0; }
+  .cabecera-seccion { margin-bottom: 20px; }
+  /* La botonera de la cabecera, pegada a su texto y no flotando. */
+  main > .seccion:first-child .botonera { margin-top: 18px; }
+}

@@ -1,0 +1,17 @@
+﻿token.txt
+id.txt
+config.json
+.env
+claves.env
+.credentials.json
+credentials.json
+token-*
+.cloudflare/
+.secretos/
+*.pem
+*.key
+node_modules/
+.venv/
+__pycache__/
+*.zip
+
