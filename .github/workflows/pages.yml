@@ -1,0 +1,55 @@
+# Publica la web en GitHub Pages SIN los ficheros internos del repositorio.
+#
+# Antes Pages servia el repo entero: CLAUDE.md, README, el generador (_web/*.py)...
+# se podian leer desde internet. Ahora se copia a _site solo lo publico y se
+# despliega eso. Arreglado el 24/09/2026.
+#
+# PARA DEJAR ALGO NUEVO FUERA DE LA WEB: anade un --exclude en el paso
+# «Copiar a _site». Lo que empieza por «/» cuenta desde la raiz del repo.
+name: Publicar web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Copiar a _site solo lo publico
+        run: |
+          rsync -a \
+            --include='/.well-known/***' \
+            --exclude='.*' \
+            --exclude='/_*' --exclude='__pycache__/' \
+            --exclude='*.md' --exclude='*.py' --exclude='*.pyc' \
+            --exclude='*.sh' --exclude='*.ps1' \
+            --exclude='CLAUDE*' --exclude='README*' --exclude='LEEME*' \
+            --exclude='/herramientas/' --exclude='/despliegue/' --exclude='/pruebas/' \
+            --exclude='node_modules/' \
+            --exclude='/vercel.json' --exclude='/package.json' --exclude='/package-lock.json' \
+            ./ _site/
+          echo "Se publican $(find _site -type f | wc -l) ficheros:"
+          (cd _site && find . -type f | sort)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: despliegue
+        uses: actions/deploy-pages@v4
