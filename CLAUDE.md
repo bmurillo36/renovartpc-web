@@ -78,9 +78,11 @@ Están marcados en el código con `# PENDIENTE PEDRO`:
 - **Dar de alta `renovartpc` en el servicio de formularios** del VPS
   (`/etc/formularios/config.json` y reiniciar). **Sin eso el formulario no
   entrega nada.** Es un paso de root.
-- **Contenedor de medición:** `centro.py › GTM` está vacío a propósito.
-  renovartpc.es no está en la tabla de la gestora (Dlega) y el contenedor lo da
-  Ana, no se inventa. El enganche ya está escrito y probado en `web.js`.
+- **Contenedor de medición: GTM-KFSLKC3Q** (lo creó Ana, de Dlega, el
+  23/09/2026; puesto el 24/09/2026 en `centro.py › GTM`, commit `8c1eff7`). Va
+  como `data-gtm` en el `<html>` y `web.js` lo lee de ahí. Las etiquetas las pone
+  Ana; la propiedad de Analytics es **G-CH35YCG9QC** (cuenta «Webs Pedro Rubio –
+  Siglo 21»).
 
 ## Trampas heredadas de tpc60horas-web
 
