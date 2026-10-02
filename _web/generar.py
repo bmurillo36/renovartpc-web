@@ -154,6 +154,7 @@ PLANTILLA = """<!doctype html>
       <div>
         <p class="pie__titulo">{empresa}</p>
         <p>{direccion}<br>{cp} {ciudad} ({provincia})<br>{referencia}</p>
+        <p>Lunes a jueves de 8:00 a 18:00 · Viernes de 8:00 a 15:00</p>
         <p>Acreditado por la Comunidad de Madrid: {acreditacion}<br>
         Homologado por la Fundación Laboral de la Construcción: {homologacion}</p>
       </div>
