@@ -232,11 +232,12 @@ REGLAS_CENTRO = [
      "te avisamos cuando sale grupo."),
 ]
 
-# El horario de oficina, con las palabras que quiere Pedro: «de 8 horas a 18
-# horas», no «08:00 a 18:00». Viernes hasta las 15 (Pedro, 15/09/2026).
+# El horario de oficina, redactado igual en todas las webs (Pedro, 02/10/2026):
+# «de 8:00 a 18:00». Viernes hasta las 15:00; en julio y agosto, de 8:00 a 15:00.
 HORARIO = [
-    ("Lunes a jueves", "de 8 horas a 18 horas"),
-    ("Viernes", "de 8 horas a 15 horas"),
+    ("Lunes a jueves", "de 8:00 a 18:00"),
+    ("Viernes", "de 8:00 a 15:00"),
+    ("En julio y agosto", "de 8:00 a 15:00"),
     ("Sábados y domingos", "cerrado"),
 ]
 HORARIO_NOTA = ("Los días que hay formación por la tarde —de 14 a 21 o de 15 "

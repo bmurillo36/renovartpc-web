@@ -226,6 +226,7 @@ def _centro_ld():
             "addressCountry": "ES",
         },
         "areaServed": {"@type": "AdministrativeArea", "name": "Comunidad de Madrid"},
+        "geo": {"@type": "GeoCoordinates", "latitude": 40.341751, "longitude": -3.863215},
         "identifier": [
             {"@type": "PropertyValue",
              "name": "Acreditación de la Comunidad de Madrid",

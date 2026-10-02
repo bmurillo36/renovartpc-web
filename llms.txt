@@ -104,8 +104,9 @@ grupos se abren **según la demanda**, sin calendario fijo publicado.
 - **Teléfonos:** 91 617 04 23, 630 29 25 16, 691 10 10 10
 - **Correo:** info@renovartpc.es
 - **Horario de oficina:**
-  - Lunes a jueves: de 8 horas a 18 horas
-  - Viernes: de 8 horas a 15 horas
+  - Lunes a jueves: de 8:00 a 18:00
+  - Viernes: de 8:00 a 15:00
+  - En julio y agosto: de 8:00 a 15:00
   - Sábados y domingos: cerrado
 
 ## Preguntas y respuestas
