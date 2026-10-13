@@ -321,7 +321,7 @@ def _cursos_ld():
             "provider": {"@id": SITIO + "/#centro"},
             "hasCourseInstance": {
                 "@type": "CourseInstance",
-                "courseMode": "Onsite",
+                "courseMode": {10: "Online", 60: "Blended"}.get(horas, "Onsite"),   # 60 h = 20 pres. + 40 online (Pedro 13/10)
                 "courseWorkload": "PT%dH" % horas,
                 "location": {
                     "@type": "Place",
