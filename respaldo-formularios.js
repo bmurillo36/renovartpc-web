@@ -53,14 +53,30 @@
     return u;
   }
 
+  /* Unas 10 webs miran ANTES de enviar si el principal está vivo (fetch a /salud) y, si no, enseñan «Ahora mismo no
+     podemos recibir el formulario» y NO envían. Si /salud falla pero el respaldo responde, se les dice que sí (así
+     envían) y se marca que el envío tiene que ir al respaldo. Si el respaldo tampoco responde, la web decide como antes. */
+  var SALUD = /^https:\/\/formularios\.(?:tpcmetal\.es|prevencion\.cc)\/salud/;
+  function respaldoVivo(e) {
+    return fetchOriginal(RESPALDO + 'salud', { mode: 'no-cors', cache: 'no-store' })
+      .then(function (r) { window.__formulariosAlRespaldo = true; return r; }, function () { throw e; });
+  }
+
   window.fetch = function (url, op) {
-    var m = PRINCIPAL.exec(typeof url === 'string' ? url : (url && url.url) || '');
+    var u0 = typeof url === 'string' ? url : (url && url.url) || '';
+    if (SALUD.test(u0)) {
+      var o = {}, k;
+      for (k in op) if (k !== 'signal') o[k] = op[k];   /* sin su temporizador: el de aquí es de 6 s */
+      return conTiempo(url, o, 6000).catch(respaldoVivo);
+    }
+    var m = PRINCIPAL.exec(u0);
     if (!m || !op || String(op.method || '').toUpperCase() !== 'POST') return fetchOriginal(url, op);
     var cuerpo = cuerpoRespaldo(op.body);
     function alRespaldo(motivo) {
       if (cuerpo === null) throw motivo instanceof Error ? motivo : new Error('formulario: sin respaldo posible');
       return fetchOriginal(RESPALDO + m[2], { method: 'POST', body: cuerpo });
     }
+    if (window.__formulariosAlRespaldo && cuerpo !== null) return alRespaldo();
     return conTiempo(url, op, 8000).then(function (r) {
       if (r.status >= 500) return alRespaldo();
       return r.clone().json().then(function (d) {
@@ -74,6 +90,7 @@
   window.addEventListener('submit', function (e) {
     var f = e.target, m = f && f.action && PRINCIPAL.exec(f.action);
     if (!m || e.defaultPrevented || f.__respaldoMirado) return;
+    if (window.__formulariosAlRespaldo) { f.action = RESPALDO + m[2]; return; }   /* ya se sabe: directo al respaldo */
     e.preventDefault();
     var hecho = false;
     function enviar(llega) {
