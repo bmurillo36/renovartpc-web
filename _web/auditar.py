@@ -369,6 +369,8 @@ def _preparar():
         h = io.open(p, encoding="utf-8").read()
         h = h.replace('<script src="/web.js" defer></script>',
                       '<script src="%s/web.js"></script>' % destino.replace("\\", "/"))
+        h = h.replace('<script src="/respaldo-formularios.js" defer></script>',
+                      '<script src="%s/respaldo-formularios.js"></script>' % destino.replace("\\", "/"))
         io.open(p, "w", encoding="utf-8", newline="\n").write(h + MEDIDA)
     _COPIA["dir"] = destino
     return destino

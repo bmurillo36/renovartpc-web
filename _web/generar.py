@@ -196,6 +196,7 @@ PLANTILLA = """<!doctype html>
 </a>
 
 <script src="/web.js" defer></script>
+<script src="/respaldo-formularios.js" defer></script>
 </body>
 </html>
 """
