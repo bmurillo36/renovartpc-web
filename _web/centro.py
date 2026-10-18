@@ -196,13 +196,14 @@ CATALOGO = [
      "14 horas del anexo XIII. No se repite lo que ya está hecho."),
     ("Personal directivo", 10, 90,   # precio dictado por Pedro el 16/09/2026
      "Para gerencia y dirección de empresa."),
-    ("Formación por oficio", 20, 120,
-     "Las 20 horas del oficio concreto: albañilería, ferralla, encofrados, "
-     "fontanería… Hay 31 oficios en el catálogo."),
-    ("Responsables de obra y técnicos de ejecución", 20, None,  # PENDIENTE PEDRO
-     "Para quien dirige la ejecución de la obra."),
-    ("Administrativos", 20, None,                         # PENDIENTE PEDRO: precio
-     "Personal de oficina de empresas del sector."),
+    # Pedro 18/10/2026: el nivel inicial de 8 h ya NO se da; el de 20 h es el
+    # valido y lo convalida. Responsables de obra/tecnicos (20 h) y
+    # administrativos (20 h) tampoco se dan: fuera del catalogo.
+    ("Curso TPC de 20 horas por oficio", 20, 120,
+     "El nivel inicial de hoy: 14 horas de parte común y 6 del oficio "
+     "(albañilería, ferralla, encofrados, fontanería… hay 31 oficios en el "
+     "catálogo). Es el curso válido para la tarjeta y <strong>convalida el "
+     "antiguo de 8 horas</strong>, que ya no se imparte."),
     ("Nivel básico de prevención", 60, 180,
      "El nivel básico del artículo 145. Es lo que se pide para ejercer de "
      "recurso preventivo en obra."),
@@ -313,10 +314,11 @@ PREGUNTAS = [
 
     ("Entonces, ¿para qué necesito un curso?",
      "Para <em>sacar</em> la tarjeta por primera vez sí hace falta formación en "
-     "prevención: el nivel inicial de 8 horas y las 20 horas del oficio. Para "
+     "prevención: el curso de 20 horas del oficio, que es el válido y convalida "
+     "el antiguo nivel inicial de 8 horas (ese ya no se da). Para "
      "<em>renovarla</em>, no. Y hay cursos que no van de la tarjeta, sino de lo "
      "que te pide la obra: el nivel básico de 60 horas para ser recurso "
-     "preventivo, los 10 de directivos o los 70 de delegados de prevención."),
+     "preventivo o los 10 de directivos."),
 
     ("Ya hice las 20 horas de un oficio y ahora me piden otro",
      "Para eso está la formación polivalente de 6 horas: vale para quien ya "

@@ -442,7 +442,7 @@ def portada():
         '<h3>%s · %d horas</h3><p>%s</p><p><strong>%s</strong></p></article>'
         % (i, n, h, q, ("%d €" % p) if p else "Pídenos precio")
         for i, (n, h, p, q) in enumerate(
-            [c for c in CATALOGO if c[1] in (8, 20, 6, 60)][:4]))
+            [c for c in CATALOGO if c[1] in (6, 10, 20, 60)][:4]))
 
     seis = _preguntas_html(PREGUNTAS[:6])
 
@@ -861,8 +861,8 @@ def caducada():
       </div>
       <div class="aparece" data-orden="3">
         <p>Otra cosa distinta es que te pidan formación <strong>nueva</strong>:
-        un oficio que no tenías, el nivel básico de 60 horas o los cursos de
-        mandos. Eso sí existe, sí se hace y te lo damos nosotros.
+        un oficio que no tenías, el nivel básico de 60 horas o el de
+        directivos de 10. Eso sí existe, sí se hace y te lo damos nosotros.
         <a href="/cursos/">Está aquí</a>.</p>
       </div>
     </div>
@@ -999,7 +999,7 @@ def reciclaje():
       <div class="aparece" data-orden="1">
         <h3>Si lo que te piden es un curso</h3>
         <p>Entonces no es un reciclaje: será un oficio nuevo de 20 horas, la
-        polivalente de 6, el nivel básico de 60 o alguno de los de mandos.
+        polivalente de 6, el nivel básico de 60 o el de directivos de 10.
         <a href="/cursos/">Todos están aquí</a> y los damos en Móstoles.</p>
       </div>
     </div>
@@ -1084,9 +1084,10 @@ def cursos():
     <div class="rejilla rejilla--2">
       <div class="aparece">
         <h2>Cuál te toca a ti</h2>
-        <p><strong>Nunca has trabajado en construcción.</strong> El nivel
-        inicial de 8 horas y después las 20 horas de tu oficio. Con eso se pide
-        la tarjeta por primera vez. Las 20 horas también las tienes explicadas
+        <p><strong>Nunca has trabajado en construcción.</strong> El curso de
+        20 horas de tu oficio. Es el nivel inicial válido hoy y convalida el
+        antiguo de 8 horas, que ya no se da. Con eso se pide la tarjeta por
+        primera vez. Las 20 horas también las tienes explicadas
         en %(tpc20)s y en %(cursotpc)s.</p>
         <p><strong>Ya tienes las 20 horas de un oficio y te piden otro.</strong>
         La polivalente de 6 horas. No se repite lo hecho.</p>
@@ -1413,10 +1414,10 @@ TODAS = [
      reciclaje, None),
 
     ("/cursos/",
-     "Cursos de construcción en Móstoles: 8, 20, 6, 60 y 70 horas",
-     "La formación de construcción que sí existe y que damos en Móstoles: "
-     "nivel inicial de 8 horas, 20 por oficio, polivalente de 6, nivel básico "
-     "de 60 y la de mandos.",
+     "Cursos de construcción en Móstoles: 20, 6, 10 y 60 horas",
+     "Cursos de construcción en Móstoles: el de 20 horas por oficio (el válido, "
+     "convalida el antiguo de 8 h), polivalente de 6, directivos de 10 y nivel "
+     "básico de 60.",
      cursos, None),
 
     ("/preguntas-frecuentes/",

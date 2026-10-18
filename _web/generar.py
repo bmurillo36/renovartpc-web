@@ -36,7 +36,7 @@ sys.path.insert(0, AQUI)
 from centro import (SITIO, CENTRO, TEL_E164, WASAP, WASAP_TEXTO, GTM)  # noqa: E402
 import paginas  # noqa: E402
 
-HOY = "2026-09-16"
+HOY = "2026-10-19"
 
 
 # --------------------------------------------------------------------------
