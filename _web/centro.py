@@ -199,7 +199,7 @@ CATALOGO = [
     # Pedro 18/10/2026: el nivel inicial de 8 h ya NO se da; el de 20 h es el
     # valido y lo convalida. Responsables de obra/tecnicos (20 h) y
     # administrativos (20 h) tampoco se dan: fuera del catalogo.
-    ("Curso TPC de 20 horas por oficio", 20, 120,
+    ("Curso TPC por oficio", 20, 120,
      "El nivel inicial de hoy: 14 horas de parte común y 6 del oficio "
      "(albañilería, ferralla, encofrados, fontanería… hay 31 oficios en el "
      "catálogo). Es el curso válido para la tarjeta y <strong>convalida el "
