@@ -6,6 +6,11 @@ Construcción (TPC)**. Estática, sin dependencias, generada con Python.
     python _web/generar.py     # construye las 11 páginas
     python _web/auditar.py     # las audita en Chrome de verdad; sale 1 si falla
 
+**Dónde se sirve (20/10/2026):** en el VPS 217.160.143.88, nginx `/etc/nginx/sites-available/renovartpc.es`, que
+sirve ESTA carpeta tal cual (lo que se guarda aquí sale al momento; lo que se sube desde el PC llega con el `git pull`
+del cron de sincronización). Se sacó de GitHub Pages para poder dar HSTS. Pages sigue activo solo como vuelta atrás
+(DNS en IONOS, cuenta C; copia de la zona de antes en `/home/claudemovil/copias/renovartpc-dns-20261020/`).
+
 ## LA REGLA DE ORO
 
 **Esta web NO PUEDE AFIRMAR QUE EXISTA el curso de reciclaje de 4 horas de
