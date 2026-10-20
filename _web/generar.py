@@ -113,7 +113,12 @@ PLANTILLA = """<!doctype html>
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{descripcion}">
 <meta property="og:url" content="{sitio}{url}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{sitio}/img/og-renovartpc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Renovar la Tarjeta Profesional de la Construcción: caducidad, documentación y duplicados, paso a paso">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{sitio}/img/og-renovartpc.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>{css}</style>
 {extra}</head>
