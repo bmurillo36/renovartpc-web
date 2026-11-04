@@ -93,7 +93,8 @@ TARJETA = {
 }
 
 # El antecedente que explica por que hoy caduca y antes no. En el BOE del 23 de
-# febrero de 2016 se elimino la disposicion transitoria tercera, que tenia la
+# febrero de 2016 (BOE-A-2016-1863, comprobado en boe.es el 04/11/2026) se
+# suprimio la disposicion transitoria tercera del V Convenio, que tenia la
 # caducidad suspendida. No es un dato de relleno: mucha gente tiene tarjetas
 # emitidas antes de esa fecha y cree que le valen para siempre.
 BOE_CADUCIDAD = "23 de febrero de 2016"
@@ -103,15 +104,14 @@ BOE_CADUCIDAD = "23 de febrero de 2016"
 # de la quinta lista hace falta AL MENOS UNO.
 DOCUMENTACION = [
     ("Impreso de solicitud de renovación",
-     "El de renovación, que no es el mismo que el de la solicitud inicial."),
+     "Es el primero de la lista que da la Fundación Laboral para renovar."),
     ("Una foto tamaño carnet",
      "La de siempre, como la del DNI."),
     ("Fotocopia del DNI o del NIE",
-     "En vigor."),
+     "O de la tarjeta de residencia, como dice el artículo 159."),
     ("Informe de vida laboral",
      "Emitido <strong>dentro de los 90 días anteriores</strong> a la solicitud. "
-     "Es el papel que más solicitudes atasca: si lo pediste hace cuatro meses, "
-     "ya no vale."),
+     "Una que pediste hace cuatro meses ya no entra en el plazo."),
 ]
 
 DOCUMENTACION_UNO_DE = [
@@ -126,8 +126,9 @@ DOCUMENTACION_UNO_DE = [
 REGIMENES = [
     ("Régimen General",
      "Estar de alta —o en incapacidad temporal— en una empresa del ámbito del "
-     "convenio. También vale acreditar <strong>al menos 30 días de alta en los "
-     "60 meses anteriores</strong>."),
+     "convenio. También vale con sumar <strong>30 días de alta, como mínimo, "
+     "en los cinco años (60 meses) justo antes de pedir la renovación</strong> "
+     "(artículo 161)."),
     ("Autónomos (RETA)",
      "Realizar actividades encuadradas en el ámbito del convenio."),
     ("Profesionales colegiados",
@@ -172,7 +173,7 @@ DERECHOS = [
 RECICLAJE_4H = {
     "existe": False,          # <-- lo que manda. NO cambiar sin fuente oficial.
     "comprobado": "16/09/2026",
-    "fuente": "portal oficial de la TPC (trabajoenconstruccion.com)",
+    "fuente": "portal oficial de la TPC de la Fundación Laboral de la Construcción",
     "precio": None,           # PENDIENTE PEDRO: no hay precio de algo que no existe.
     # PENDIENTE PEDRO: los 70 € que figuraban aquí son los del curso
     # POLIVALENTE de 6 horas, que sí existe. Estaban puestos en el andamiaje
@@ -249,9 +250,10 @@ HORARIO_NOTA = ("Los días que hay formación por la tarde —de 14 a 21 o de 15
 # convenio) y las reglas del centro que dicto Pedro. Ni una inventada.
 PREGUNTAS = [
     ("¿Hay que hacer un curso para renovar la TPC?",
-     "No. El portal oficial lo dice literalmente: la renovación sigue el mismo "
-     "procedimiento que la solicitud inicial <em>«excepto la formación en "
-     "prevención»</em>. Se renueva con papeles —vida laboral y acreditación de "
+     "No. El artículo 161 del convenio solo pide, para renovar, la documentación "
+     "de los apartados 1 y 2 del artículo 159, y el diploma del curso va en el "
+     "apartado 3. El portal oficial lo resume así: mismo procedimiento que la "
+     "solicitud inicial <em>«excepto la formación en prevención»</em>. Se renueva con papeles —vida laboral y acreditación de "
      "que trabajas en el sector—, no volviendo a clase."),
 
     ("¿Existe el curso de reciclaje de 4 horas de construcción?",
@@ -280,9 +282,9 @@ PREGUNTAS = [
      "Es el artículo 159, apartados 1 y 2."),
 
     ("Llevo un tiempo sin trabajar en construcción, ¿puedo renovar?",
-     "En Régimen General se puede acreditar <strong>al menos 30 días de alta en "
-     "los 60 meses anteriores</strong>, es decir, en los últimos cinco años. No "
-     "hace falta estar trabajando hoy mismo si cumples eso."),
+     "Sí, si en los 60 meses que van justo hasta el día en que la pides suman "
+     "<strong>30 días de alta o más</strong> en empresas de construcción del "
+     "convenio (artículo 161). Con eso no necesitas estar de alta ese día."),
 
     ("Soy autónomo. ¿Puedo tener y renovar la TPC?",
      "Sí. Los autónomos del RETA pueden renovarla si realizan actividades "
@@ -328,8 +330,8 @@ PREGUNTAS = [
 
     ("Mi tarjeta es antigua y no ponía nada de caducar",
      "Hasta el BOE del 23 de febrero de 2016 había una disposición transitoria "
-     "que tenía la caducidad suspendida. Se eliminó. Desde entonces la tarjeta "
-     "caduca a los cinco años de su emisión, sin excepciones."),
+     "del V Convenio que tenía la caducidad suspendida. Ese BOE la suprimió, y "
+     "desde entonces la tarjeta caduca a los cinco años de su emisión."),
 
     ("¿Para qué sirve tener la TPC, aparte de para entrar en obra?",
      "El titular queda exento del periodo de prueba en los trabajos de su "

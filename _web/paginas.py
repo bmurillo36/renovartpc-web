@@ -421,8 +421,8 @@ def portada():
         ("Mira la fecha de tu tarjeta",
          "Está impresa en ella. Cinco años desde que se emitió."),
         ("Pide la vida laboral",
-         "Y hazlo cerca de la fecha: solo vale si se emitió en los 90 días "
-         "anteriores a la solicitud."),
+         "Pídela poco antes de entregar la solicitud: solo vale si se emitió "
+         "en los 90 días anteriores."),
         ("Junta los papeles y entrégalos",
          "Impreso de renovación, foto, DNI o NIE, vida laboral y una prueba de "
          "que trabajas en el sector."),
@@ -520,12 +520,11 @@ def portada():
       </div>
       <div class="aparece" data-orden="1">
         <h2>¿Y si mi tarjeta es antigua?</h2>
-        <p>Hasta el BOE del %(boe)s existía una disposición transitoria que
-        tenía la caducidad suspendida. Se eliminó. Desde entonces todas las
+        <p>Hasta el BOE del %(boe)s existía una disposición transitoria del
+        V Convenio que tenía la caducidad suspendida. Ese BOE la suprimió. Desde entonces todas las
         tarjetas caducan a los cinco años de su emisión.</p>
         <p>Si la tuya es de antes y nunca te preocupó la fecha, míralo ahora:
-        es el motivo número uno por el que alguien se planta en la obra con una
-        tarjeta que no vale.</p>
+        la fecha que cuenta es la de emisión impresa en la tarjeta.</p>
       </div>
     </div>
   </div>
@@ -625,8 +624,8 @@ def renovar():
       </div>
       <div class="ficha aparece" data-orden="1">
         <p class="rotulo">Quién puede renovar</p>
-        <p style="font-size:.95rem">Depende del régimen en el que estés. Es el
-        requisito que más gente da por perdido sin comprobarlo.</p>
+        <p style="font-size:.95rem">Depende del régimen en el que estés.
+        Compruébalo antes de dar nada por perdido.</p>
       </div>
     </div>
   </div>
@@ -641,9 +640,9 @@ def renovar():
     <div class="rejilla rejilla--3">%(regimenes)s</div>
     <div class="aviso aparece" data-orden="3">
       <p><strong>Lee bien lo de los 30 días.</strong> En Régimen General no hace
-      falta estar trabajando hoy: vale con acreditar al menos 30 días de alta en
-      los 60 meses anteriores, o sea en los últimos cinco años. Mucha gente cree
-      que ha perdido el derecho y no es cierto.</p>
+      falta estar trabajando hoy: te basta con que la vida laboral sume 30 días
+      de alta, o más, en empresas del convenio a lo largo de los 60 meses previos
+      al día en que entregas la solicitud (artículo 161).</p>
     </div>
   </div>
 </section>
@@ -667,10 +666,10 @@ def renovar():
       </div>
     </div>
     <div class="aviso aparece" data-orden="2">
-      <p><strong>El papel que más solicitudes atasca es la vida laboral.</strong>
-      Tiene que estar emitida dentro de los 90 días anteriores a la solicitud.
-      Si la pediste hace cuatro meses para otra cosa, no te sirve: pide una
-      nueva, que es gratis y se saca por internet en un minuto.</p>
+      <p><strong>Ojo con la fecha de la vida laboral.</strong> La emite la
+      Tesorería General de la Seguridad Social y tiene que estar fechada dentro
+      de los 90 días anteriores a la solicitud. Si la pediste hace cuatro meses
+      para otra cosa, no te sirve: pide una nueva.</p>
     </div>
   </div>
 </section>
@@ -694,8 +693,8 @@ def renovar():
         <p>Y conviene decirlo claro. Somos un centro de formación homologado por
         la Fundación Laboral (número %(flc)s): damos los cursos del catálogo de
         construcción. El trámite de la tarjeta se hace en los puntos de arriba.</p>
-        <p>Si tu duda es de papeles, llámanos igual. Te la resolvemos en dos
-        minutos aunque no nos compres nada.</p>
+        <p>Si tu duda es de papeles, llámanos igual. Te la resolvemos aunque no
+        nos compres nada.</p>
       </div>
     </div>
   </div>
@@ -714,8 +713,7 @@ def renovar():
       </table>
     </div>
     <div class="aviso aparece" data-orden="1">
-      <p><strong>El plazo que se lleva por delante los expedientes es el del
-      mes.</strong> Si te requieren documentación y lo dejas pasar un mes, el
+      <p><strong>No dejes pasar el mes.</strong> Si te requieren documentación y lo dejas pasar un mes, el
       expediente se archiva y la solicitud se entiende denegada. Hay que volver
       a empezar de cero.</p>
     </div>
@@ -802,7 +800,7 @@ def caducada():
         has perdido o está deteriorada—, lo que se pide es un
         <strong>duplicado</strong>. Se hace mostrando el DNI en un punto de
         tramitación.</p>
-        <p>Y aquí está la trampa que pilla a todo el mundo: el duplicado
+        <p>Y ojo: el duplicado
         <strong>conserva la fecha de caducidad original</strong>. No te regala
         cinco años nuevos. Si a tu tarjeta le quedaban dos meses, al duplicado
         le quedan dos meses.</p>
@@ -822,7 +820,7 @@ def caducada():
         <thead><tr><th></th><th>Renovación</th><th>Duplicado</th></tr></thead>
         <tbody>
           <tr><td><strong>Cuándo</strong></td>
-              <td>La tarjeta ha caducado o está a punto</td>
+              <td>Han pasado los cinco años desde su emisión</td>
               <td>Deterioro, robo o extravío</td></tr>
           <tr><td><strong>Qué se lleva</strong></td>
               <td>Impreso, foto, DNI o NIE, vida laboral de 90 días y una prueba de empleo</td>
@@ -990,11 +988,11 @@ def reciclaje():
     </div>
     <div class="rejilla rejilla--2">
       <div class="aparece">
-        <h3>Si tu tarjeta caduca o ha caducado</h3>
+        <h3>Si tu tarjeta ha caducado</h3>
         <p>Renovarla con papeles. Está explicado entero, con la documentación
         del artículo 159 y los plazos, en
-        <a href="/renovar-la-tpc/">cómo renovar la TPC</a>. Y si ya se te pasó
-        la fecha, en <a href="/tpc-caducada/">TPC caducada</a>.</p>
+        <a href="/renovar-la-tpc/">cómo renovar la TPC</a>. Y si además la has
+        perdido, en <a href="/tpc-caducada/">TPC caducada</a>.</p>
       </div>
       <div class="aparece" data-orden="1">
         <h3>Si lo que te piden es un curso</h3>
@@ -1514,8 +1512,13 @@ reserva posible.
 - **Quién la emite:** %(emisor)s.
 - **Qué la regula:** %(convenio)s.
 - **Validez:** caduca a los **cinco años** de su emisión (%(art_cad)s).
-- **Antecedente:** en el BOE del %(boe)s se eliminó la disposición transitoria
-  tercera, que tenía la caducidad suspendida. Desde entonces caducan todas.
+- **Antecedente:** el BOE del %(boe)s (BOE-A-2016-1863) suprimió la
+  disposición transitoria tercera del V Convenio, que tenía la caducidad
+  suspendida. Desde entonces caducan todas.
+- **Renovación (artículo 161):** pasados los cinco años, el titular la renueva si
+  suma un mínimo de 30 días de alta en empresas del convenio en los 60 meses
+  previos a su solicitud. Aporta lo de los apartados 1 y 2 del artículo 159;
+  la formación no se vuelve a pedir.
 - **Tarjeta caducada:** quien la tiene caducada **puede solicitar la
   renovación**. El portal oficial no describe ninguna sanción.
 - **Deterioro, robo o extravío:** se pide un **duplicado** mostrando el DNI en
