@@ -311,6 +311,10 @@ def main():
     print("\n  TOTAL: %d letras en %d páginas" % (total, len(paginas.TODAS)))
     print("  Todo en: %s" % RAIZ)
 
+    # 10/11/2026: las imágenes de cada página van al sitemap (Google Imágenes). Repetible.
+    import sitemap_imagenes
+    sitemap_imagenes.poner(RAIZ)
+
 
 if __name__ == "__main__":
     main()
